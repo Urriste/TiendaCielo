@@ -1,0 +1,274 @@
+/* TODOS LOS ESTILOS DE LA ANIMACION DE CARGA
+
+ */
+
+.centrado {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  z-index: 1000;
+  position: absolute;
+  width: 100%;
+}
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: red;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+/* ESTILOS DE LA WEB EN GENERAL */
+
+body {
+  background-color: #f6f6f6;
+  overflow: hidden;
+  width: 100%;
+  background-image: url("../img/Confetti-Doodles.svg");
+}
+
+.nav-link {
+  color: black;
+}
+
+.navbar {
+  margin: 0 0 50px 0;
+}
+
+.header {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-row {
+  width: 100%;
+  height: 50%;
+}
+
+.header-text {
+  margin: 0 0 25px 0;
+  font-weight: 400;
+}
+
+.paragraph {
+  font-size: 45px;
+}
+
+.letter {
+  background-color: rgba(186, 215, 223, 0.4);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.destacado {
+  text-align: center;
+  margin: 35px 0 0 0;
+}
+
+.nombre-destacado,
+.precio-destacado {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.descripcion-destacado {
+  font-size: 12px;
+}
+
+.comprar {
+  background-color: transparent;
+  border: 2px solid rgb(138, 211, 232);
+  padding: 10px;
+  font-weight: 700;
+}
+
+.ver-mas {
+  color: white;
+  background-color: black;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.ver-mas:hover {
+  color: black;
+  background-color: white;
+}
+
+.comprar:hover {
+  background-color: rgba(147, 208, 225, 0.4);
+  color: white;
+}
+
+.productos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.productos-title {
+  font-size: 50px;
+  margin: 0 0 150px 0;
+}
+
+.card-title {
+  font-size: 20px;
+}
+
+.card-text {
+  font-size: 11px;
+  text-align: center;
+}
+
+.card-productos {
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  height: 500px;
+}
+
+.card-image {
+  height: 100px;
+  width: 100px;
+  margin-bottom: 25px;
+}
+
+.btn-comprar {
+  background-color: thistle;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.card-row {
+  display: flex;
+  justify-content: center;
+}
+
+.carrito-title {
+  font-size: 35px;
+  margin: 0 0 50px 0;
+}
+
+.carrito {
+  width: 70%;
+}
+
+.wave {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: -100;
+}
+
+.active {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.none {
+  display: none;
+}
+
+@media screen and (max-width: 576px) {
+  .header {
+    margin-bottom: 150px;
+  }
+  .productos {
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0 25px 0;
+  }
+  .productos-title {
+    font-size: 40px;
+    margin: 0 0 150px 0;
+  }
+
+  .card-title {
+    font-size: 15px;
+  }
+
+  .card-text {
+    font-size: 10px;
+    text-align: center;
+  }
+  .card-row {
+    width: 100%;
+  }
+  .btn-comprar {
+    padding: 5px;
+    margin: 5px 0 0 0;
+  }
+  table {
+    width: 100%;
+  }
+
+  .paragraph {
+    font-size: 35px;
+    text-align: center;
+  }
+
+  .letter {
+    padding: 4px;
+  }
+}

@@ -14,6 +14,7 @@ let btnCarrito = document.getElementById("btnCarrito");
 let header = document.getElementById("header");
 let productosSection = document.getElementById("productos-section");
 let carritoSection = document.getElementById("carrito");
+let badge = document.getElementById("badge");
 
 //Objeto Carrito, donde se va a almacenar todo lo que compre el usuario//
 let carrito = {};
@@ -159,11 +160,14 @@ const pintarFooter = () => {
     (acc, { cantidad }) => acc + cantidad,
     0
   );
+
   const nPrecio = Object.values(carrito).reduce(
     (acc, { cantidad, precio }) => acc + cantidad * precio,
     0
   );
 
+  //Aprovechando el acumulador de cantidad, actualizo el contador del carrito//
+  badge.innerHTML = nCantidad;
   templateFooter.querySelectorAll("td")[0].textContent = nCantidad;
   templateFooter.querySelector("span").textContent = nPrecio;
 
@@ -174,6 +178,9 @@ const pintarFooter = () => {
   const btnVaciar = document.getElementById("vaciar-carrito");
   btnVaciar.addEventListener("click", () => {
     carrito = {};
+
+    //Reinicio el contador del carrito tambien//
+    badge.innerHTML = 0;
     pintarCarrito(carrito);
   });
 };
